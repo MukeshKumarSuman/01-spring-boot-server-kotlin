@@ -12,7 +12,7 @@ class PartnerService() {
     val logger = LoggerFactory.getLogger(PartnerService::class.java)
     fun deposit(depositRequest: DepositRequest): DepositResponse {
         logger.info("Request: {}", depositRequest)
-        val depositResponse = DepositResponse(1000, "accepted")
+        val depositResponse = DepositResponse(1000, "accepted", "time_limit_reached")
         logger.info("Request: {}", depositResponse)
         if (depositRequest.amount < 10) {
             throw InsufficientBalanceException("Insufficient balance")
